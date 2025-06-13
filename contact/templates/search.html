@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block title %}
+  Search Page
+{% endblock %}
+
+{% block content %}
+  <center>
+    {% if pno %}
+      <h2>Search Result</h2>
+      <p><strong>Contact Name:</strong> {{ pno.cname }}</p>
+      <p><strong>Contact Number:</strong> {{ pno.cno }}</p>
+      <p><strong>Contact Email:</strong> {{ pno.cemail }}</p>
+    
+    {% elif error %}
+      <p style="color: red;">{{ error }}</p>
+
+    {% else %}
+      <p>No results to show. Please submit a search.</p>
+    {% endif %}
+  </center>
+{% endblock %}

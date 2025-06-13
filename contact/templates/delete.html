@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block title %}DeleteContact Page{% endblock %}
+
+{% block content %}
+   <center><h1>do you want to delete {{contact.cname}}....permanetly</h1></center> 
+   <form method="post">
+    {% csrf_token %}
+     <input type="submit"  class="btn btn-outline-danger" value="yes">
+   </form>
+
+  <a href="{% url 'view' %}"><button type="button" class="btn btn-outline-success">No</button></a>
+{% endblock %}

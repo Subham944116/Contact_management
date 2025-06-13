@@ -1,0 +1,31 @@
+ {% extends 'base.html' %}
+
+{% block title %}
+  AddContact page
+{% endblock %}
+
+{% block content %}
+     <form method="post">
+    {% csrf_token %}
+  <div class="mb-3">
+    <label for="Title" class="form-label">Name</label>
+    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter your Name" name="cname" value="{{ contact.cname }}">
+  </div>
+  <div class="mb-3">
+    <label for="Desciption" class="form-label">Email</label>
+   <input type="email" class="form-control" id="cemail" name="cemail" value="{{  contact.cemail }}">
+  </div>
+
+    </div>
+  <div class="mb-3">
+    <label for="Desciption" class="form-label">Contact NO</label>
+   <input type="number" class="form-control" id="cno" name="cno" value="{{  contact.cno }}">
+  </div>
+   {% if contact %}
+  <button type="submit" class="btn btn-primary">Update</button>
+   {% else %}
+    <button type="submit" class="btn btn-primary">Add</button>
+    {% endif %}
+
+</form>
+{% endblock %}
